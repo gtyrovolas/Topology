@@ -1,0 +1,109 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper, total={6.5in, 8in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsthm}
+
+\title{An Introduction to the Study of Topological Spaces}
+\author{Giannis Tyrovolas}
+
+\newtheorem{theorem}{Theorem}[section]
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+I've chosen to study Topology. What is one of the most fundamental areas of mathematics. What sparked my interest was Ker's comment on continuity of functions. That in reality continuity has to do something with the pre-image of an open set being open. Well, it's time to learn exactly what's going on. Let's end this section with a pickup line.
+
+\fbox{Girl, I must be a member of a topology, cause I'm open to seeing you}
+
+\section{First steps}
+
+As you might have guessed, when studying topology it's important to know what a topology is. Well:
+
+\begin{definition}[Topology]
+
+A topological space $(X,\mathcal{T})$ is a non-empty set $X$ with a family $\mathcal{T}$ of subsets of $X$. Such that:
+
+\begin{description}
+	\item[T1] $\emptyset, X \in \mathcal{T}$
+	\item[T2] $U, V \in \mathcal{T} \implies U \cap V \in \mathcal{T}$
+	\item[T3] Let $\mathcal{F}$ a family of open sets. Then $\bigcup\limits_{U \in \mathcal{F}} U \in \mathcal{T}$.
+\end{description}
+\end{definition}
+
+\begin{example}
+Only finite intersection is closed in open sets. For instance: 
+\[
+	\bigcap\limits_{i \in \mathbb{N}} \ (0, 1 + \frac{1}{n} ) = (0,1]	
+\]
+
+\end{example}
+
+You should remember what a metric space is but just in case:
+
+\begin{definition}[Metric Space]
+A \emph{metric space} $(X, d)$ consists of a non-empty set $X$ with a function $d: X \times X \longrightarrow \mathbb{R}$ such that:
+
+\begin{description}
+	\item[M1] $d(x,y) \geqslant 0$ and $d(x,y) = 0 \iff x = y$
+	\item[M2] (Symmetry) $d(x,y) = d(y, x)$
+	\item[M3] (Triangle Inequality) $d(x,z) \leqslant d(x,y) + d(y,z)$
+\end{description}
+\end{definition}
+
+\begin{prop}
+The open sets of a metric space define a topology. 
+\end{prop}
+\begin{proof}
+If they didn't you wouldn't be studying this course. You've done this proof many times you don't have to do it again.
+\end{proof}
+
+
+\begin{theorem}[Continuity as open sets]
+
+A function $f: X \longrightarrow Y$ where $X$ and $Y$ are metric spaces is continuous if and only if for all $U\subseteq Y$ open $f^{-1}(U)$ is open in $X$
+
+\end{theorem}
+
+Oh boi. This is a very important theorem. Understand it so you can move on with your life.
+
+
+\begin{proof}
+
+
+\end{proof}
+
+What is actually important is that topologies are generalisations of metric spaces. So every metric space describes a topology but not every topology can be made a metric. This motivates the following:
+
+
+\begin{definition}
+A topological space is \emph{metrizable} if there is a metric space such that the open sets of the metric is equal to $\mathcal{T}$
+
+Two metric spaces are \emph{topologically equivalent} if they give rise to the same topology. 
+\end{definition}
+
+As continuity is in reality expressed by open sets, continuity works the same in both sets. For instance $d_1, d_2, d_\infty$ on $\mathbb{R}^n$ are topologically equivalent.
+
+
+
+\end{document}
+

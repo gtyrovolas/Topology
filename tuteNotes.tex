@@ -10,7 +10,7 @@
 \usepackage{mathtools}
 \usepackage{amsthm}
 
-\title{title}
+\title{An Exploration of Topological Spaces Accompanied by Professor Nikolay Nikolov and Maria Spiridon}
 \author{Giannis Tyrovolas}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -29,8 +29,90 @@
 
 \maketitle
 
+\section{Sixth of February 2020}
+
+On a very beautiful day in the beginning of February and the course, we arrived at Prof. Nikolov's room. He was quite satisfied with our problemsheets and we started talking about random stuff.
 
 
+\begin{definition}[Zariski Topology on $\mathbb{R}^n$]
+
+For $S$ a non-empty set of polynomials in $x_1,\ldots,x_n$ let $V(S)$ the set of common zeroes of these polynomials. Formally $V(S) = \{(r_1 \ \ldots \ r_n) \colon p(r_1 \ \ldots \ r_n ) = 0 \forall p \in S\}$. Then the Zariski topology $\mathcal{Z}$ is defined as $V(S)$ being a closed set.
+\end{definition}
+
+This is a topology since
+
+\begin{enumerate}
+	\item $V(0_p) = \mathbb{R}^n \in \mathcal{Z}, V(1) = \emptyset \in \mathcal{Z}$
+	\item $V(S_1) \cap V(S_2) = V(S_1 \cup S_2)$ which implies closure for arbitrary intersections.
+	\item  which implies closure of unions.
+\end{enumerate}
+
+The Zariski topology in $\mathbb{R}$ is the co-finite topology, i.e. the topology where the open sets are all infinite sets.
+
+Since the points are closed it is a $T_1$ topology, for point $u$ take polynomial $p(x) = x - u$. But it is not Hausdorff since all open sets have non-empty intersections (in fact infinite), hence it cannot be Hausdorff. Reminder, a space is Hausdorff if for any two points $u,v$ there exist disjoint open sets such that $u \in U, v\in V$.
+
+Hene the Zariski topology is non-metrisable. But it is compact. For an open cover of $R$ pick an open set. Then only finitely many points are not covered. Hence we can get a finite subcover.
+
+\emph{Question:} Is it possible to characterise metrisable topological spaces by their topological properties?
+The answer is of course yes.
+
+So this discussion has to do with Tychonoff and Urysohn.
+
+\begin{definition}[T3]
+The third separation axiom is the following: Given any closed $V \subseteq X$ and any $x \notin V$ there are $U,W$ such that $U$ covers $V$ and $x \in W$ and $U \cap W = \emptyset$. 
+\end{definition}
+
+This is stronger than T2.
+
+Now this is true in metric spaces. Let $d(x,V) = \epsilon > 0$. This is positive since $x \notin \overline{A}$ by question 2. Then let $W$ be the union of $B(v, \frac{\epsilon}{2})$ for $v \in V$ and $V = B(x, \frac{\epsilon}{2})$.
+
+\begin{definition}[Local basis]
+A local topological basis is a set such that every open set contains an element of the basis. For instance $B(0,\frac{1}{n}$ is a countable local basis for any metric space.
+\end{definition} 
+
+\begin{example}[Unreachable limit points]
+
+Consider $\mathbb{R}$ with closed sets $\emptyset, \mathbb{R}$ and $C \subset \mathbb{R}$ where $C$ is countable. This is a topology as arbitrary intersections are countable and finite unions are also countable. We will prove that there are points in the closure which are not the limit of a sequence.
+\\
+Consider $U = \mathbb{R} \setminus \{0\}$. Since the set is uncountable it is open. Hence $\overline{\mathbb{R} \smallsetminus \{0\}} = \mathbb{R}$. Then $0 \in U \prime$. Now take $x_n \to 0$. Let $C = \{x_n : n \in \mathbb{N}\}$. Then $C$ is countable and hence closed. So $\mathbb{R} \setminus C$ is open and the sequence never reaches this open neighbourhood. So 0 is unreachable. 
+\end{example}
+
+\begin{theorem}[Continuity]
+$f$ is continuous $\iff f(\overline{A}) \subseteq \overline{f(A)}$. 
+\end{theorem}
+
+\begin{example}[Strict inclusion]
+For $f(\overline{A}) \subsetneqq \overline{f(A)}$ take $A = {(x, \frac{1}{x})}$ and $(x,y) \mapsto x$. Then $\overline{A} = A$ but $f(\overline{A})$ positive reals of which the closure is $\mathbb{R}$
+\end{example}
+
+Note: we need $\overline{A}$ to be a non-compact set.
+
+\begin{lemma}
+For a set with compact closure $f(\overline{A}) = \overline{f(A)}$.
+\end{lemma}
+
+\begin{proof}
+\begin{align*}
+f(A) &\subseteq f(\overline{A}) \subseteq \overline{f(A)} \text{ by continuity} \\
+&f(\overline{A}) \text{ is compact and hence closed and a superset of } f(A) \\
+\implies &\overline{f(A)} \subseteq f(\overline{A}) \\\end{align*}
+\end{proof}
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

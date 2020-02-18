@@ -58,6 +58,8 @@ The answer is of course yes.
 
 So this discussion has to do with Tychonoff and Urysohn.
 
+A space is metrisable if T3 holds and the space is second countable. I think at least.
+
 \begin{definition}[T3]
 The third separation axiom is the following: Given any closed $V \subseteq X$ and any $x \notin V$ there are $U,W$ such that $U$ covers $V$ and $x \in W$ and $U \cap W = \emptyset$. 
 \end{definition}
@@ -67,15 +69,18 @@ This is stronger than T2.
 Now this is true in metric spaces. Let $d(x,V) = \epsilon > 0$. This is positive since $x \notin \overline{A}$ by question 2. Then let $W$ be the union of $B(v, \frac{\epsilon}{2})$ for $v \in V$ and $V = B(x, \frac{\epsilon}{2})$.
 
 \begin{definition}[Local basis]
-A local topological basis is a set such that every open set contains an element of the basis. For instance $B(0,\frac{1}{n}$ is a countable local basis for any metric space.
+A local topological basis is a set such that every open set contains an element of the basis. For instance $B(0,\frac{1}{n})$ is a countable local basis for any metric space.
 \end{definition} 
 
 \begin{example}[Unreachable limit points]
 
 Consider $\mathbb{R}$ with closed sets $\emptyset, \mathbb{R}$ and $C \subset \mathbb{R}$ where $C$ is countable. This is a topology as arbitrary intersections are countable and finite unions are also countable. We will prove that there are points in the closure which are not the limit of a sequence.
 \\
-Consider $U = \mathbb{R} \setminus \{0\}$. Since the set is uncountable it is open. Hence $\overline{\mathbb{R} \smallsetminus \{0\}} = \mathbb{R}$. Then $0 \in U \prime$. Now take $x_n \to 0$. Let $C = \{x_n : n \in \mathbb{N}\}$. Then $C$ is countable and hence closed. So $\mathbb{R} \setminus C$ is open and the sequence never reaches this open neighbourhood. So 0 is unreachable. 
+Consider $U = \mathbb{R} \setminus \{0\}$. Since the set is uncountable it is open. Hence $\overline{\mathbb{R} \smallsetminus \{0\}} = \mathbb{R}$. Then $0 \in U^\prime$. Now take $x_n \to 0$. Let $C = \{x_n : n \in \mathbb{N}\}$. Then $C$ is countable and hence closed. So $\mathbb{R} \setminus C$ is open and the sequence never reaches this open neighbourhood. So 0 is unreachable. 
+\\
+This is also an example of a space without a countable basis.
 \end{example}
+
 
 \begin{theorem}[Continuity]
 $f$ is continuous $\iff f(\overline{A}) \subseteq \overline{f(A)}$. 
